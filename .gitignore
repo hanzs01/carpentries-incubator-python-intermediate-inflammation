@@ -14,7 +14,7 @@
 .pytest_cache
 
 # venv dir and files
-.venv
+venv/
 venv/pyvenv.cfg
 venv/Lib/site-packages/cycler.py
 venv/Lib/site-packages/distutils-precedence.pth
