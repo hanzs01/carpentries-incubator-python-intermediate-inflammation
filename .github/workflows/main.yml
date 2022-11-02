@@ -34,6 +34,5 @@ job:
     # Run our tests
     - name: Test with PyTest
       run: |
-        # pytest --cov=inflamation.models test_models.py
         pytest test_models.py 
     
