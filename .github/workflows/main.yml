@@ -8,31 +8,31 @@ jobs:
   
   build:
 
-  # Specify the OS of the Runner
-  runs-on: ubuntu-latest
+    # Specify the OS of the Runner
+    runs-on: ubuntu-latest
 
-  # Define our steps
-  steps: 
-    
-    # Firstly, checkout the repo
-    - name: Checkout repository 
-      uses: actions/checkout@v2
-
-    # Set up Python env
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v2
-      with: 
-        python-version: 3.9
+    # Define our steps
+    steps: 
       
-    # Install dependencies 
-    - name: Install Python dependencies 
-      run: | 
-        python3 -m pip install --upgrade pip
-        pip3 install -r requirements.txt 
-        pip3 install -e . 
-    
-    # Run our tests
-    - name: Test with PyTest
-      run: |
-        pytest test_models.py 
+      # Firstly, checkout the repo
+      - name: Checkout repository 
+        uses: actions/checkout@v2
+
+      # Set up Python env
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v2
+        with: 
+          python-version: 3.9
+        
+      # Install dependencies 
+      - name: Install Python dependencies 
+        run: | 
+          python3 -m pip install --upgrade pip
+          pip3 install -r requirements.txt 
+          pip3 install -e . 
+      
+      # Run our tests
+      - name: Test with PyTest
+        run: |
+          pytest test_models.py 
     
