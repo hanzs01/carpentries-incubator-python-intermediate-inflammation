@@ -35,4 +35,9 @@ jobs:
       - name: Test with PyTest
         run: |
           pytest test_models.py 
+
+      # Linter
+      - name: Check style with Pylint 
+        run: |
+          python3 -m pylint --fail-under=0 --reports=y
     

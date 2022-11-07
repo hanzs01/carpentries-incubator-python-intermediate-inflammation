@@ -49,4 +49,9 @@ def pateint_normalise(data):
     """Normalise patient data from 2D array of inflammation data    """
 
     maxes = np.max(data, axis =1)
-    return data / maxes[: , np.newaxis]
+    with np.errstate(invalid = 'ignore' , divide = 'ignore'):
+        normalised = data / maxes[: , np.newaxis]
+    normalised[np.isnan(normalised)] = 0
+    normalised[normalised < 0] =0
+    # return data / maxes[: , np.newaxis]
+    return normalised
